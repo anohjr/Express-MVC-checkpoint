@@ -7,7 +7,7 @@ class BoatManager extends AbstractManager {
 
   findByName(name) {
     return this.connection.query(
-      `select * from  ${this.table} where name = ?`,
+      `select b.coord_y, b.coord_x, t.type from  ${this.table} b where name = ? JOIN tile t ON t.coord_x = b.coord_x AND t.coord_y = b.coord_y`,
       [name]
     );
   }
