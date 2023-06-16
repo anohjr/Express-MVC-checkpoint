@@ -13,7 +13,7 @@ class AbstractManager {
     return this.connection.query(`select * from  ${this.table}`);
   }
 
-  delete(id) {
+  deleteOne(id) {
     return this.connection.query(`delete from ${this.table} where id = ?`, [
       id,
     ]);
