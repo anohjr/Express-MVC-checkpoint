@@ -7,4 +7,4 @@ const checkTile = (req, res, next) => {
   });
 };
 
-module.exports = { checkTile };
+module.exports = checkTile;

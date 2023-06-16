@@ -1,14 +1,7 @@
-const models = require("../models/index");
+const models = require("../models");
 
-const getTiles = (req, res) => {
-  models.tile
-    .findAll()
-    .then(([tiles]) => {
-      res.status(200).json(tiles);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+const getAllTiles = (req, res) => {
+  models.tile.findAll().then(([tiles]) => res.status(200).json(tiles));
 };
 
-module.exports = { getTiles };
+module.exports = { getAllTiles };
