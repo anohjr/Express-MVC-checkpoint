@@ -11,6 +11,13 @@ class BoatManager extends AbstractManager {
       [name]
     );
   }
+
+  updateCoordById(coordX, coordY, id) {
+    return this.connection.query(
+      "UPDATE boat SET coord_x = ?, coord_y = ? WHERE id = ?",
+      [coordX, coordY, id]
+    );
+  }
 }
 
 module.exports = BoatManager;
